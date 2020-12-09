@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<lab name="IP Fabric - CLOS 3 Stage" version="1" scripttimeout="300" lock="0">
+  <topology>
+    <nodes>
+      <node id="3" name="LEAF-03" type="qemu" template="extremexos" image="extremexos-voss7.1.0.0" console="telnet" cpu="1" cpulimit="0" ram="2048" ethernet="4" uuid="0b045567-ccee-40e2-9f9a-55937dd6abba" qemu_options="-machine type=pc-1.0,accel=kvm -cpu Nehalem -nographic -rtc base=utc" qemu_version="2.4.0" qemu_arch="x86_64" delay="0" icon="Switch L3.png" config="0" left="174" top="438">
+        <interface id="1" name="port1" type="ethernet" network_id="4"/>
+        <interface id="2" name="port2" type="ethernet" network_id="9"/>
+        <interface id="3" name="port3" type="ethernet" network_id="7"/>
+      </node>
+      <node id="4" name="LEAF-04" type="qemu" template="extremexos" image="extremexos-voss7.1.0.0" console="telnet" cpu="1" cpulimit="0" ram="2048" ethernet="4" uuid="7558bb1e-740f-48d1-aed6-9a2e9d540abf" qemu_options="-machine type=pc-1.0,accel=kvm -cpu Nehalem -nographic -rtc base=utc" qemu_version="2.4.0" qemu_arch="x86_64" delay="0" icon="Switch L3.png" config="0" left="477" top="435">
+        <interface id="1" name="port1" type="ethernet" network_id="6"/>
+        <interface id="2" name="port2" type="ethernet" network_id="10"/>
+        <interface id="3" name="port3" type="ethernet" network_id="8"/>
+      </node>
+      <node id="5" name="VPC5" type="vpcs" template="vpcs" image="" ethernet="1" delay="0" icon="Desktop.png" config="0" left="147" top="555">
+        <interface id="0" name="eth0" type="ethernet" network_id="7"/>
+      </node>
+      <node id="6" name="VPC6" type="vpcs" template="vpcs" image="" ethernet="1" delay="0" icon="Desktop.png" config="0" left="507" top="546">
+        <interface id="0" name="eth0" type="ethernet" network_id="8"/>
+      </node>
+      <node id="7" name="RT-01" type="iol" template="iol" image="i86bi_LinuxL3-AdvEnterpriseK9-M2_157_3_May_2018.bin" ethernet="2" nvram="128" ram="256" serial="2" console="" delay="0" icon="Router.png" config="1" left="330" top="168">
+        <interface id="0" name="e0/0" type="ethernet" network_id="11"/>
+        <interface id="16" name="e0/1" type="ethernet" network_id="1"/>
+        <interface id="32" name="e0/2" type="ethernet" network_id="2"/>
+      </node>
+      <node id="1" name="SPINE-01" type="qemu" template="extremexos" image="extremexos-voss7.1.0.0" console="telnet" cpu="1" cpulimit="0" ram="2048" ethernet="8" uuid="8481ceca-5057-4e9c-8bde-735f7d748d3c" qemu_options="-machine type=pc-1.0,accel=kvm -cpu Nehalem -nographic -rtc base=utc" qemu_version="2.4.0" qemu_arch="x86_64" delay="0" icon="Switch L3.png" config="0" left="213" top="282">
+        <interface id="1" name="port1" type="ethernet" network_id="4"/>
+        <interface id="2" name="port2" type="ethernet" network_id="10"/>
+        <interface id="4" name="port4" type="ethernet" network_id="1"/>
+        <interface id="6" name="port6" type="ethernet" network_id="3"/>
+        <interface id="7" name="port7" type="ethernet" network_id="5"/>
+      </node>
+      <node id="2" name="SPINE-02" type="qemu" template="extremexos" image="extremexos-voss7.1.0.0" console="telnet" cpu="1" cpulimit="0" ram="2048" ethernet="8" uuid="4593935d-c482-4c8f-9aaa-5c8a897a70a2" qemu_options="-machine type=pc-1.0,accel=kvm -cpu Nehalem -nographic -rtc base=utc" qemu_version="2.4.0" qemu_arch="x86_64" delay="0" icon="Switch L3.png" config="0" left="444" top="282">
+        <interface id="1" name="port1" type="ethernet" network_id="6"/>
+        <interface id="2" name="port2" type="ethernet" network_id="9"/>
+        <interface id="4" name="port4" type="ethernet" network_id="2"/>
+        <interface id="6" name="port6" type="ethernet" network_id="3"/>
+        <interface id="7" name="port7" type="ethernet" network_id="5"/>
+      </node>
+    </nodes>
+    <networks>
+      <network id="7" type="bridge" name="Net-VPC5iface_0" left="603" top="511" visibility="0"/>
+      <network id="8" type="bridge" name="Net-LEAF-04iface_3" left="909" top="397" visibility="0"/>
+      <network id="1" type="bridge" name="Net-SPINE-01iface_4" left="651" top="217" visibility="0"/>
+      <network id="2" type="bridge" name="Net-RT-01iface_32" left="771" top="124" visibility="0"/>
+      <network id="3" type="bridge" name="Net-SPINE-01iface_6" left="651" top="217" visibility="0"/>
+      <network id="5" type="bridge" name="Net-SPINE-02iface_7" left="876" top="238" visibility="0"/>
+      <network id="4" type="bridge" name="Net-SPINE-01iface_1" left="645" top="238" visibility="0"/>
+      <network id="6" type="bridge" name="Net-SPINE-02iface_1" left="876" top="238" visibility="0"/>
+      <network id="9" type="bridge" name="Net-SPINE-02iface_2" left="876" top="238" visibility="0"/>
+      <network id="10" type="bridge" name="Net-SPINE-01iface_2" left="645" top="238" visibility="0"/>
+      <network id="11" type="pnet0" name="internet" left="327" top="42" visibility="1"/>
+    </networks>
+  </topology>
+  <objects>
+    <configs>
+      <config id="7">CiEKdmVyc2lvbiAxNS43CnNlcnZpY2UgdGltZXN0YW1wcyBkZWJ1ZyBkYXRldGltZSBtc2VjCnNlcnZpY2UgdGltZXN0YW1wcyBsb2cgZGF0ZXRpbWUgbXNlYwpubyBzZXJ2aWNlIHBhc3N3b3JkLWVuY3J5cHRpb24KIQpob3N0bmFtZSBSb3V0ZXIKIQpib290LXN0YXJ0LW1hcmtlcgpib290LWVuZC1tYXJrZXIKIQohCiEKbm8gYWFhIG5ldy1tb2RlbAohCiEKIQpjbG9jayB0aW1lem9uZSAtMDMgLTMgMAptbWkgcG9sbGluZy1pbnRlcnZhbCA2MApubyBtbWkgYXV0by1jb25maWd1cmUKbm8gbW1pIHB2YwptbWkgc25tcC10aW1lb3V0IDE4MAohCiEKIQohCiEKIQohCiEKIQohCiEKIQohCiEKIQoKCiEKIQohCiEKaXAgY2VmCm5vIGlwdjYgY2VmCiEKbXVsdGlsaW5rIGJ1bmRsZS1uYW1lIGF1dGhlbnRpY2F0ZWQKIQohCiEKIQohCiEKIQohCiEKIQpyZWR1bmRhbmN5CiEKIQohIAohCiEKIQohCiEKIQohCiEKIQohCiEKIQppbnRlcmZhY2UgRXRoZXJuZXQwLzAKIG5vIHNodXRkb3duCiBpcCBhZGRyZXNzIGRoY3AKIGR1cGxleCBhdXRvCiEKaW50ZXJmYWNlIEV0aGVybmV0MC8xCiBubyBzaHV0ZG93bgogbm8gaXAgYWRkcmVzcwogc2h1dGRvd24KIGR1cGxleCBhdXRvCiEKaW50ZXJmYWNlIEV0aGVybmV0MC8yCiBubyBzaHV0ZG93bgogbm8gaXAgYWRkcmVzcwogc2h1dGRvd24KIGR1cGxleCBhdXRvCiEKaW50ZXJmYWNlIEV0aGVybmV0MC8zCiBubyBzaHV0ZG93bgogbm8gaXAgYWRkcmVzcwogc2h1dGRvd24KIGR1cGxleCBhdXRvCiEKaW50ZXJmYWNlIEV0aGVybmV0MS8wCiBubyBzaHV0ZG93bgogbm8gaXAgYWRkcmVzcwogc2h1dGRvd24KIGR1cGxleCBhdXRvCiEKaW50ZXJmYWNlIEV0aGVybmV0MS8xCiBubyBzaHV0ZG93bgogbm8gaXAgYWRkcmVzcwogc2h1dGRvd24KIGR1cGxleCBhdXRvCiEKaW50ZXJmYWNlIEV0aGVybmV0MS8yCiBubyBzaHV0ZG93bgogbm8gaXAgYWRkcmVzcwogc2h1dGRvd24KIGR1cGxleCBhdXRvCiEKaW50ZXJmYWNlIEV0aGVybmV0MS8zCiBubyBzaHV0ZG93bgogbm8gaXAgYWRkcmVzcwogc2h1dGRvd24KIGR1cGxleCBhdXRvCiEKaW50ZXJmYWNlIFNlcmlhbDIvMAogbm8gc2h1dGRvd24KIG5vIGlwIGFkZHJlc3MKIHNodXRkb3duCiBzZXJpYWwgcmVzdGFydC1kZWxheSAwCiEKaW50ZXJmYWNlIFNlcmlhbDIvMQogbm8gc2h1dGRvd24KIG5vIGlwIGFkZHJlc3MKIHNodXRkb3duCiBzZXJpYWwgcmVzdGFydC1kZWxheSAwCiEKaW50ZXJmYWNlIFNlcmlhbDIvMgogbm8gc2h1dGRvd24KIG5vIGlwIGFkZHJlc3MKIHNodXRkb3duCiBzZXJpYWwgcmVzdGFydC1kZWxheSAwCiEKaW50ZXJmYWNlIFNlcmlhbDIvMwogbm8gc2h1dGRvd24KIG5vIGlwIGFkZHJlc3MKIHNodXRkb3duCiBzZXJpYWwgcmVzdGFydC1kZWxheSAwCiEKaW50ZXJmYWNlIFNlcmlhbDMvMAogbm8gc2h1dGRvd24KIG5vIGlwIGFkZHJlc3MKIHNodXRkb3duCiBzZXJpYWwgcmVzdGFydC1kZWxheSAwCiEKaW50ZXJmYWNlIFNlcmlhbDMvMQogbm8gc2h1dGRvd24KIG5vIGlwIGFkZHJlc3MKIHNodXRkb3duCiBzZXJpYWwgcmVzdGFydC1kZWxheSAwCiEKaW50ZXJmYWNlIFNlcmlhbDMvMgogbm8gc2h1dGRvd24KIG5vIGlwIGFkZHJlc3MKIHNodXRkb3duCiBzZXJpYWwgcmVzdGFydC1kZWxheSAwCiEKaW50ZXJmYWNlIFNlcmlhbDMvMwogbm8gc2h1dGRvd24KIG5vIGlwIGFkZHJlc3MKIHNodXRkb3duCiBzZXJpYWwgcmVzdGFydC1kZWxheSAwCiEKaXAgZm9yd2FyZC1wcm90b2NvbCBuZAohCiEKbm8gaXAgaHR0cCBzZXJ2ZXIKbm8gaXAgaHR0cCBzZWN1cmUtc2VydmVyCiEKaXB2NiBpb2FtIHRpbWVzdGFtcAohCiEKIQpjb250cm9sLXBsYW5lCiEKIQohCiEKIQohCiEKIQpsaW5lIGNvbiAwCiBsb2dnaW5nIHN5bmNocm9ub3VzCmxpbmUgYXV4IDAKbGluZSB2dHkgMCA0CiBsb2dpbgogdHJhbnNwb3J0IGlucHV0IG5vbmUKIQohCmVuZAo=</config>
+    </configs>
+  </objects>
+</lab>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<lab name="XMC" version="1" scripttimeout="300" lock="0">
+  <topology>
+    <nodes>
+      <node id="1" name="EXOS30-XMC" type="qemu" template="extremexos" image="extremexos-30.7.1.1" console="telnet" cpu="1" cpulimit="0" ram="320" ethernet="8" uuid="6027a37b-5f9f-4ae8-9ca8-54485d87907d" qemu_options="-machine type=pc-1.0,accel=kvm -cpu Nehalem -nographic -rtc base=utc" qemu_version="2.4.0" qemu_arch="x86_64" delay="0" icon="Switch.png" config="0" left="327" top="240">
+        <interface id="0" name="Mgmt" type="ethernet" network_id="1"/>
+        <interface id="2" name="port2" type="ethernet" network_id="3"/>
+      </node>
+      <node id="2" name="EXOS22-XMC" type="qemu" template="extremexos" image="extremexos-22.7.1.2" console="telnet" cpu="1" cpulimit="0" ram="320" ethernet="3" uuid="1a672aab-bf86-4136-85f0-c9fb7f849388" qemu_options="-machine type=pc-1.0,accel=kvm -cpu Nehalem -nographic -rtc base=utc" qemu_version="2.4.0" qemu_arch="x86_64" delay="0" icon="Switch.png" config="0" left="588" top="246">
+        <interface id="0" name="Mgmt" type="ethernet" network_id="1"/>
+        <interface id="1" name="port1" type="ethernet" network_id="2"/>
+      </node>
+      <node id="3" name="ExtremeOs" type="qemu" template="extremexos" image="extremexos-voss7.1.0.0" console="telnet" cpu="1" cpulimit="0" ram="2048" ethernet="3" uuid="c36e280d-212a-4992-a6e0-8cd51659834c" qemu_options="-machine type=pc-1.0,accel=kvm -cpu Nehalem -nographic -rtc base=utc" qemu_version="2.4.0" qemu_arch="x86_64" delay="0" icon="Switch L3.png" config="0" left="462" top="360">
+        <interface id="0" name="Mgmt" type="ethernet" network_id="1"/>
+        <interface id="1" name="port1" type="ethernet" network_id="2"/>
+        <interface id="2" name="port2" type="ethernet" network_id="3"/>
+      </node>
+    </nodes>
+    <networks>
+      <network id="1" type="pnet0" name="NAT" left="468" top="117" visibility="1"/>
+      <network id="2" type="bridge" name="Net-ExtremeOsiface_1" left="501" top="382" visibility="0"/>
+      <network id="3" type="bridge" name="Net-ExtremeOsiface_2" left="498" top="397" visibility="0"/>
+    </networks>
+  </topology>
+  <objects>
+    <textobjects>
+      <textobject id="1" name="txt 1" type="text">
+        <data>PGRpdiBpZD0iY3VzdG9tVGV4dDEiIGNsYXNzPSJjdXN0b21TaGFwZSBjdXN0b21UZXh0IGNvbnRleHQtbWVudSBqdGstZHJhZ2dhYmxlIHVpLXNlbGVjdGVlIHVpLXJlc2l6YWJsZS1hdXRvaGlkZSIgZGF0YS1wYXRoPSIxIiBzdHlsZT0iZGlzcGxheTogaW5saW5lOyBwb3NpdGlvbjogYWJzb2x1dGU7IGxlZnQ6IDMzMHB4OyB0b3A6IDIxM3B4OyBjdXJzb3I6IG1vdmU7IHotaW5kZXg6IDEwMDE7IGhlaWdodDogMjRweDsgd2lkdGg6IGF1dG87Ij48cCBzdHlsZT0idmVydGljYWwtYWxpZ246dG9wO2NvbG9yOiMwMDAwMDA7YmFja2dyb3VuZC1jb2xvcjojZmZmZmZmO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtd2VpZ2h0OiBub3JtYWw7IiBjbGFzcz0iIiBjb250ZW50ZWRpdGFibGU9ImZhbHNlIiBhbGlnbj0iY2VudGVyIj4xOTIuMTY4LjAuMjIxICAgICAgICA8L3A+PC9kaXY+</data>
+      </textobject>
+      <textobject id="2" name="txt 2" type="text">
+        <data>PGRpdiBpZD0iY3VzdG9tVGV4dDIiIGNsYXNzPSJjdXN0b21TaGFwZSBjdXN0b21UZXh0IGNvbnRleHQtbWVudSBqdGstZHJhZ2dhYmxlIHVpLXNlbGVjdGVlIHVpLXJlc2l6YWJsZS1hdXRvaGlkZSIgZGF0YS1wYXRoPSIyIiBzdHlsZT0iZGlzcGxheTogaW5saW5lOyBwb3NpdGlvbjogYWJzb2x1dGU7IGxlZnQ6IDYwM3B4OyB0b3A6IDIyNXB4OyBjdXJzb3I6IG1vdmU7IHotaW5kZXg6IDEwMDE7IGhlaWdodDogMjRweDsgd2lkdGg6IGF1dG87Ij48cCBzdHlsZT0idmVydGljYWwtYWxpZ246dG9wO2NvbG9yOiMwMDAwMDA7YmFja2dyb3VuZC1jb2xvcjojZmZmZmZmO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtd2VpZ2h0OiBub3JtYWw7IiBjbGFzcz0iIiBjb250ZW50ZWRpdGFibGU9ImZhbHNlIiBhbGlnbj0iY2VudGVyIj4xOTIuMTY4LjAuMjIyICAgICAgICA8L3A+PC9kaXY+</data>
+      </textobject>
+      <textobject id="3" name="txt 3" type="text">
+        <data>PGRpdiBpZD0iY3VzdG9tVGV4dDMiIGNsYXNzPSJjdXN0b21TaGFwZSBjdXN0b21UZXh0IGNvbnRleHQtbWVudSBqdGstZHJhZ2dhYmxlIGRyYWdzdG9wcGVkIHVpLXNlbGVjdGVlIHVpLXJlc2l6YWJsZS1hdXRvaGlkZSIgZGF0YS1wYXRoPSIzIiBzdHlsZT0iZGlzcGxheTogaW5saW5lOyBwb3NpdGlvbjogYWJzb2x1dGU7IGxlZnQ6IDUzMXB4OyB0b3A6IDM2MHB4OyBjdXJzb3I6IG1vdmU7IHotaW5kZXg6IDEwMDE7IGhlaWdodDogMjRweDsgd2lkdGg6IGF1dG87Ij48cCBzdHlsZT0idmVydGljYWwtYWxpZ246dG9wO2NvbG9yOiMwMDAwMDA7YmFja2dyb3VuZC1jb2xvcjojZmZmZmZmO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtd2VpZ2h0OiBub3JtYWw7IiBjbGFzcz0iIiBjb250ZW50ZWRpdGFibGU9ImZhbHNlIiBhbGlnbj0iY2VudGVyIj4xOTIuMTY4LjAuMjIzICAgICAgICA8L3A+PC9kaXY+</data>
+      </textobject>
+    </textobjects>
+  </objects>
+</lab>

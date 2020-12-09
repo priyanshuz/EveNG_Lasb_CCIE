@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<lab name="EXOS LABs" id="2eb786b8-9fdd-438c-a39e-3cca2ccf7b7f" version="1" scripttimeout="300" lock="0">
+  <topology>
+    <nodes>
+      <node id="1" name="CORE-01" type="qemu" template="extremexos" image="extremexos-30.7.1.1" console="telnet" cpu="1" cpulimit="0" ram="512" ethernet="8" uuid="3b89ff83-21e3-449e-8932-5a16a89e580e" qemu_options="-machine type=pc-1.0,accel=kvm -cpu Nehalem -nographic -rtc base=utc" qemu_version="2.4.0" qemu_arch="x86_64" delay="0" icon="Switch L3.png" config="0" left="519" top="306">
+        <interface id="0" name="Mgmt" type="ethernet" network_id="7"/>
+        <interface id="1" name="port1" type="ethernet" network_id="1"/>
+        <interface id="6" name="port6" type="ethernet" network_id="5"/>
+        <interface id="7" name="port7" type="ethernet" network_id="6"/>
+      </node>
+      <node id="2" name="CORE-02" type="qemu" template="extremexos" image="extremexos-30.7.1.1" console="telnet" cpu="1" cpulimit="0" ram="512" ethernet="8" uuid="582e7741-048f-4947-b13a-5d9c6b732226" qemu_options="-machine type=pc-1.0,accel=kvm -cpu Nehalem -nographic -rtc base=utc" qemu_version="2.4.0" qemu_arch="x86_64" delay="0" icon="Switch L3.png" config="0" left="807" top="306">
+        <interface id="0" name="Mgmt" type="ethernet" network_id="7"/>
+        <interface id="1" name="port1" type="ethernet" network_id="2"/>
+        <interface id="6" name="port6" type="ethernet" network_id="5"/>
+        <interface id="7" name="port7" type="ethernet" network_id="6"/>
+      </node>
+      <node id="5" name="VPC01" type="vpcs" template="vpcs" image="" ethernet="1" delay="0" icon="Desktop.png" config="0" left="504" top="567"/>
+      <node id="6" name="VPC02" type="vpcs" template="vpcs" image="" ethernet="1" delay="0" icon="Desktop.png" config="0" left="822" top="567"/>
+    </nodes>
+    <networks>
+      <network id="1" type="bridge" name="Net-CORE-01iface_1" left="576" top="349" visibility="0"/>
+      <network id="2" type="bridge" name="Net-CORE-02iface_1" left="867" top="349" visibility="0"/>
+      <network id="5" type="bridge" name="Net-CORE-01iface_6" left="576" top="349" visibility="0"/>
+      <network id="6" type="bridge" name="Net-CORE-01iface_7" left="576" top="349" visibility="0"/>
+      <network id="7" type="pnet0" name="NAT" left="660" top="225" visibility="1"/>
+    </networks>
+  </topology>
+</lab>

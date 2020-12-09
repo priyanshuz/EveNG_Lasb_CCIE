@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<lab name="23 - Unnumbered Interfaces" version="1" scripttimeout="300" lock="1">
+  <topology>
+    <nodes>
+      <node id="1" name="R1" type="iol" template="iol" image="i86bi_LinuxL3-AdvEnterpriseK9-M2_157_3_May_2018.bin" ethernet="1" nvram="128" ram="256" serial="1" console="" delay="0" icon="Router.png" config="0" left="360" top="228">
+        <interface id="16" name="e0/1" type="ethernet" network_id="2"/>
+        <interface id="1" type="serial" name="s1/0" remote_id="2" remote_if="1"/>
+      </node>
+      <node id="2" name="R2" type="iol" template="iol" image="i86bi_LinuxL3-AdvEnterpriseK9-M2_157_3_May_2018.bin" ethernet="1" nvram="128" ram="256" serial="1" console="" delay="0" icon="Router.png" config="0" left="621" top="222">
+        <interface id="16" name="e0/1" type="ethernet" network_id="3"/>
+        <interface id="1" type="serial" name="s1/0" remote_id="1" remote_if="1"/>
+      </node>
+      <node id="3" name="VPC1" type="vpcs" template="vpcs" image="" ethernet="1" delay="0" icon="Desktop.png" config="0" left="216" top="228">
+        <interface id="0" name="eth0" type="ethernet" network_id="2"/>
+      </node>
+      <node id="4" name="VPC2" type="vpcs" template="vpcs" image="" ethernet="1" delay="0" icon="Desktop.png" config="0" left="819" top="237">
+        <interface id="0" name="eth0" type="ethernet" network_id="3"/>
+      </node>
+    </nodes>
+    <networks>
+      <network id="2" type="bridge" name="Net-VPC1iface_0" left="410" top="312" visibility="0"/>
+      <network id="3" type="bridge" name="Net-VPC2iface_0" left="431" top="267" visibility="0"/>
+    </networks>
+  </topology>
+  <objects>
+    <textobjects>
+      <textobject id="1" name="txt 1" type="text">
+        <data>PGRpdiBpZD0iY3VzdG9tVGV4dDEiIGNsYXNzPSJjdXN0b21TaGFwZSBjdXN0b21UZXh0IGNvbnRleHQtbWVudSBqdGstZHJhZ2dhYmxlIHVpLXJlc2l6YWJsZSBkcmFnc3RvcHBlZCIgZGF0YS1wYXRoPSIxIiBzdHlsZT0iZGlzcGxheTogaW5saW5lOyBwb3NpdGlvbjogYWJzb2x1dGU7IGxlZnQ6IDEwMnB4OyB0b3A6IDIzN3B4OyBjdXJzb3I6IG1vdmU7IHotaW5kZXg6IDEwMDE7Ij48cCBzdHlsZT0idmVydGljYWwtYWxpZ246dG9wO2NvbG9yOiMwMDAwMDA7YmFja2dyb3VuZC1jb2xvcjojZmZmZmZmO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtd2VpZ2h0OiBub3JtYWw7IiBhbGlnbj0iY2VudGVyIj4xOTIuMTY4LjEwMC4xMDAvMjQgICAgICAgIDwvcD48ZGl2IGNsYXNzPSJ1aS1yZXNpemFibGUtaGFuZGxlIHVpLXJlc2l6YWJsZS1lIiBzdHlsZT0iei1pbmRleDogOTA7Ij48L2Rpdj48ZGl2IGNsYXNzPSJ1aS1yZXNpemFibGUtaGFuZGxlIHVpLXJlc2l6YWJsZS1zIiBzdHlsZT0iei1pbmRleDogOTA7Ij48L2Rpdj48ZGl2IGNsYXNzPSJ1aS1yZXNpemFibGUtaGFuZGxlIHVpLXJlc2l6YWJsZS1zZSB1aS1pY29uIHVpLWljb24tZ3JpcHNtYWxsLWRpYWdvbmFsLXNlIiBzdHlsZT0iei1pbmRleDogOTA7Ij48L2Rpdj48L2Rpdj4=</data>
+      </textobject>
+      <textobject id="2" name="txt 2" type="text">
+        <data>PGRpdiBpZD0iY3VzdG9tVGV4dDIiIGNsYXNzPSJjdXN0b21TaGFwZSBjdXN0b21UZXh0IGNvbnRleHQtbWVudSBqdGstZHJhZ2dhYmxlIHVpLXJlc2l6YWJsZSBkcmFnc3RvcHBlZCIgZGF0YS1wYXRoPSIyIiBzdHlsZT0iZGlzcGxheTogaW5saW5lOyBwb3NpdGlvbjogYWJzb2x1dGU7IGxlZnQ6IDMzOXB4OyB0b3A6IDE5NXB4OyBjdXJzb3I6IG1vdmU7IHotaW5kZXg6IDEwMDE7IGhlaWdodDogMjRweDsgd2lkdGg6IGF1dG87Ij48cCBzdHlsZT0idmVydGljYWwtYWxpZ246dG9wO2NvbG9yOiMwMDAwMDA7YmFja2dyb3VuZC1jb2xvcjojZmZmZmZmO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtd2VpZ2h0OiBub3JtYWw7IiBjbGFzcz0iIiBjb250ZW50ZWRpdGFibGU9ImZhbHNlIiBhbGlnbj0iY2VudGVyIj4xOTIuMTY4LjEwMC4xLzI0ICAgICAgICA8L3A+PGRpdiBjbGFzcz0idWktcmVzaXphYmxlLWhhbmRsZSB1aS1yZXNpemFibGUtZSIgc3R5bGU9InotaW5kZXg6IDkwOyI+PC9kaXY+PGRpdiBjbGFzcz0idWktcmVzaXphYmxlLWhhbmRsZSB1aS1yZXNpemFibGUtcyIgc3R5bGU9InotaW5kZXg6IDkwOyI+PC9kaXY+PGRpdiBjbGFzcz0idWktcmVzaXphYmxlLWhhbmRsZSB1aS1yZXNpemFibGUtc2UgdWktaWNvbiB1aS1pY29uLWdyaXBzbWFsbC1kaWFnb25hbC1zZSIgc3R5bGU9InotaW5kZXg6IDkwOyI+PC9kaXY+PC9kaXY+</data>
+      </textobject>
+      <textobject id="3" name="txt 3" type="text">
+        <data>PGRpdiBpZD0iY3VzdG9tVGV4dDMiIGNsYXNzPSJjdXN0b21TaGFwZSBjdXN0b21UZXh0IGNvbnRleHQtbWVudSBqdGstZHJhZ2dhYmxlIHVpLXJlc2l6YWJsZS1hdXRvaGlkZSIgZGF0YS1wYXRoPSIzIiBzdHlsZT0iZGlzcGxheTogaW5saW5lOyBwb3NpdGlvbjogYWJzb2x1dGU7IGxlZnQ6IDYwMHB4OyB0b3A6IDE5NXB4OyBjdXJzb3I6IG1vdmU7IHotaW5kZXg6IDEwMDE7IGhlaWdodDogMjRweDsgd2lkdGg6IGF1dG87Ij48cCBzdHlsZT0idmVydGljYWwtYWxpZ246dG9wO2NvbG9yOiMwMDAwMDA7YmFja2dyb3VuZC1jb2xvcjojZmZmZmZmO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtd2VpZ2h0OiBub3JtYWw7IiBjbGFzcz0iIiBjb250ZW50ZWRpdGFibGU9ImZhbHNlIiBhbGlnbj0iY2VudGVyIj4xOTIuMTY4LjIwMC4xLzI0ICAgICAgICA8L3A+PC9kaXY+</data>
+      </textobject>
+      <textobject id="4" name="txt 4" type="text">
+        <data>PGRpdiBpZD0iY3VzdG9tVGV4dDQiIGNsYXNzPSJjdXN0b21TaGFwZSBjdXN0b21UZXh0IGNvbnRleHQtbWVudSBqdGstZHJhZ2dhYmxlIGRyYWdzdG9wcGVkIHVpLXJlc2l6YWJsZS1hdXRvaGlkZSIgZGF0YS1wYXRoPSI0IiBzdHlsZT0iZGlzcGxheTogaW5saW5lOyBwb3NpdGlvbjogYWJzb2x1dGU7IGxlZnQ6IDgyOHB4OyB0b3A6IDIxM3B4OyBjdXJzb3I6IG1vdmU7IHotaW5kZXg6IDEwMDE7IGhlaWdodDogMjRweDsgd2lkdGg6IGF1dG87Ij48cCBzdHlsZT0idmVydGljYWwtYWxpZ246dG9wO2NvbG9yOiMwMDAwMDA7YmFja2dyb3VuZC1jb2xvcjojZmZmZmZmO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtd2VpZ2h0OiBub3JtYWw7IiBjbGFzcz0iIiBjb250ZW50ZWRpdGFibGU9ImZhbHNlIiBhbGlnbj0iY2VudGVyIj4xOTIuMTY4LjIwMC4xMDAvMjQgICAgICAgIDwvcD48L2Rpdj4=</data>
+      </textobject>
+    </textobjects>
+    <configs>
+      <config id="1">CiEKISBMYXN0IGNvbmZpZ3VyYXRpb24gY2hhbmdlIGF0IDIyOjE2OjM2IC0wMyBTYXQgSnVsIDI3IDIwMTkKIQp2ZXJzaW9uIDE1LjcKc2VydmljZSB0aW1lc3RhbXBzIGRlYnVnIGRhdGV0aW1lIG1zZWMKc2VydmljZSB0aW1lc3RhbXBzIGxvZyBkYXRldGltZSBtc2VjCm5vIHNlcnZpY2UgcGFzc3dvcmQtZW5jcnlwdGlvbgohCmhvc3RuYW1lIFIxCiEKYm9vdC1zdGFydC1tYXJrZXIKYm9vdC1lbmQtbWFya2VyCiEKIQohCm5vIGFhYSBuZXctbW9kZWwKIQohCiEKY2xvY2sgdGltZXpvbmUgLTAzIC0zIDAKbW1pIHBvbGxpbmctaW50ZXJ2YWwgNjAKbm8gbW1pIGF1dG8tY29uZmlndXJlCm5vIG1taSBwdmMKbW1pIHNubXAtdGltZW91dCAxODAKIQohCiEKIQohCiEKIQohCiEKIQohCiEKIQohCiEKCgohCiEKIQohCmlwIGNlZgpubyBpcHY2IGNlZgohCm11bHRpbGluayBidW5kbGUtbmFtZSBhdXRoZW50aWNhdGVkCiEKIQohCiEKIQohCiEKIQohCiEKcmVkdW5kYW5jeQohCiEKISAKIQohCiEKIQohCiEKIQohCiEKIQohCiEKaW50ZXJmYWNlIExvb3BiYWNrMAogbm8gc2h1dGRvd24KIGlwIGFkZHJlc3MgMS4xLjEuMSAyNTUuMjU1LjI1NS4yNTUKIQppbnRlcmZhY2UgRXRoZXJuZXQwLzAKIG5vIHNodXRkb3duCiBubyBpcCBhZGRyZXNzCiBzaHV0ZG93bgogZHVwbGV4IGF1dG8KIQppbnRlcmZhY2UgRXRoZXJuZXQwLzEKIG5vIHNodXRkb3duCiBpcCBhZGRyZXNzIDE5Mi4xNjguMTAwLjEgMjU1LjI1NS4yNTUuMAogZHVwbGV4IGF1dG8KIQppbnRlcmZhY2UgRXRoZXJuZXQwLzIKIG5vIHNodXRkb3duCiBubyBpcCBhZGRyZXNzCiBzaHV0ZG93bgogZHVwbGV4IGF1dG8KIQppbnRlcmZhY2UgRXRoZXJuZXQwLzMKIG5vIHNodXRkb3duCiBubyBpcCBhZGRyZXNzCiBzaHV0ZG93bgogZHVwbGV4IGF1dG8KIQppbnRlcmZhY2UgU2VyaWFsMS8wCiBubyBzaHV0ZG93bgogaXAgdW5udW1iZXJlZCBMb29wYmFjazAKIHNlcmlhbCByZXN0YXJ0LWRlbGF5IDAKIQppbnRlcmZhY2UgU2VyaWFsMS8xCiBubyBzaHV0ZG93bgogbm8gaXAgYWRkcmVzcwogc2h1dGRvd24KIHNlcmlhbCByZXN0YXJ0LWRlbGF5IDAKIQppbnRlcmZhY2UgU2VyaWFsMS8yCiBubyBzaHV0ZG93bgogbm8gaXAgYWRkcmVzcwogc2h1dGRvd24KIHNlcmlhbCByZXN0YXJ0LWRlbGF5IDAKIQppbnRlcmZhY2UgU2VyaWFsMS8zCiBubyBzaHV0ZG93bgogbm8gaXAgYWRkcmVzcwogc2h1dGRvd24KIHNlcmlhbCByZXN0YXJ0LWRlbGF5IDAKIQppcCBmb3J3YXJkLXByb3RvY29sIG5kCiEKIQpubyBpcCBodHRwIHNlcnZlcgpubyBpcCBodHRwIHNlY3VyZS1zZXJ2ZXIKaXAgcm91dGUgMi4yLjIuMiAyNTUuMjU1LjI1NS4yNTUgU2VyaWFsMS8wCmlwIHJvdXRlIDE5Mi4xNjguMjAwLjAgMjU1LjI1NS4yNTUuMCBTZXJpYWwxLzAKIQppcHY2IGlvYW0gdGltZXN0YW1wCiEKIQohCmNvbnRyb2wtcGxhbmUKIQohCiEKIQohCiEKIQohCmxpbmUgY29uIDAKIGxvZ2dpbmcgc3luY2hyb25vdXMKbGluZSBhdXggMApsaW5lIHZ0eSAwIDQKIGxvZ2luCiB0cmFuc3BvcnQgaW5wdXQgbm9uZQohCiEKZW5kCg==</config>
+      <config id="2">CiEKISBMYXN0IGNvbmZpZ3VyYXRpb24gY2hhbmdlIGF0IDIyOjE2OjUwIC0wMyBTYXQgSnVsIDI3IDIwMTkKIQp2ZXJzaW9uIDE1LjcKc2VydmljZSB0aW1lc3RhbXBzIGRlYnVnIGRhdGV0aW1lIG1zZWMKc2VydmljZSB0aW1lc3RhbXBzIGxvZyBkYXRldGltZSBtc2VjCm5vIHNlcnZpY2UgcGFzc3dvcmQtZW5jcnlwdGlvbgohCmhvc3RuYW1lIFIyCiEKYm9vdC1zdGFydC1tYXJrZXIKYm9vdC1lbmQtbWFya2VyCiEKIQohCm5vIGFhYSBuZXctbW9kZWwKIQohCiEKY2xvY2sgdGltZXpvbmUgLTAzIC0zIDAKbW1pIHBvbGxpbmctaW50ZXJ2YWwgNjAKbm8gbW1pIGF1dG8tY29uZmlndXJlCm5vIG1taSBwdmMKbW1pIHNubXAtdGltZW91dCAxODAKIQohCiEKIQohCiEKIQohCiEKIQohCiEKIQohCiEKCgohCiEKIQohCmlwIGNlZgpubyBpcHY2IGNlZgohCm11bHRpbGluayBidW5kbGUtbmFtZSBhdXRoZW50aWNhdGVkCiEKIQohCiEKIQohCiEKIQohCiEKcmVkdW5kYW5jeQohCiEKISAKIQohCiEKIQohCiEKIQohCiEKIQohCiEKaW50ZXJmYWNlIExvb3BiYWNrMAogbm8gc2h1dGRvd24KIGlwIGFkZHJlc3MgMi4yLjIuMiAyNTUuMjU1LjI1NS4yNTUKIQppbnRlcmZhY2UgRXRoZXJuZXQwLzAKIG5vIHNodXRkb3duCiBubyBpcCBhZGRyZXNzCiBzaHV0ZG93bgogZHVwbGV4IGF1dG8KIQppbnRlcmZhY2UgRXRoZXJuZXQwLzEKIG5vIHNodXRkb3duCiBpcCBhZGRyZXNzIDE5Mi4xNjguMjAwLjEgMjU1LjI1NS4yNTUuMAogZHVwbGV4IGF1dG8KIQppbnRlcmZhY2UgRXRoZXJuZXQwLzIKIG5vIHNodXRkb3duCiBubyBpcCBhZGRyZXNzCiBzaHV0ZG93bgogZHVwbGV4IGF1dG8KIQppbnRlcmZhY2UgRXRoZXJuZXQwLzMKIG5vIHNodXRkb3duCiBubyBpcCBhZGRyZXNzCiBzaHV0ZG93bgogZHVwbGV4IGF1dG8KIQppbnRlcmZhY2UgU2VyaWFsMS8wCiBubyBzaHV0ZG93bgogaXAgdW5udW1iZXJlZCBMb29wYmFjazAKIHNlcmlhbCByZXN0YXJ0LWRlbGF5IDAKIQppbnRlcmZhY2UgU2VyaWFsMS8xCiBubyBzaHV0ZG93bgogbm8gaXAgYWRkcmVzcwogc2h1dGRvd24KIHNlcmlhbCByZXN0YXJ0LWRlbGF5IDAKIQppbnRlcmZhY2UgU2VyaWFsMS8yCiBubyBzaHV0ZG93bgogbm8gaXAgYWRkcmVzcwogc2h1dGRvd24KIHNlcmlhbCByZXN0YXJ0LWRlbGF5IDAKIQppbnRlcmZhY2UgU2VyaWFsMS8zCiBubyBzaHV0ZG93bgogbm8gaXAgYWRkcmVzcwogc2h1dGRvd24KIHNlcmlhbCByZXN0YXJ0LWRlbGF5IDAKIQppcCBmb3J3YXJkLXByb3RvY29sIG5kCiEKIQpubyBpcCBodHRwIHNlcnZlcgpubyBpcCBodHRwIHNlY3VyZS1zZXJ2ZXIKaXAgcm91dGUgMS4xLjEuMSAyNTUuMjU1LjI1NS4yNTUgU2VyaWFsMS8wCmlwIHJvdXRlIDE5Mi4xNjguMTAwLjAgMjU1LjI1NS4yNTUuMCBTZXJpYWwxLzAKIQppcHY2IGlvYW0gdGltZXN0YW1wCiEKIQohCmNvbnRyb2wtcGxhbmUKIQohCiEKIQohCiEKIQohCmxpbmUgY29uIDAKIGxvZ2dpbmcgc3luY2hyb25vdXMKbGluZSBhdXggMApsaW5lIHZ0eSAwIDQKIGxvZ2luCiB0cmFuc3BvcnQgaW5wdXQgbm9uZQohCiEKZW5kCg==</config>
+      <config id="3">aXAgMTkyLjE2OC4xMDAuMTAwIDE5Mi4xNjguMTAwLjEgMjQK</config>
+      <config id="4">aXAgMTkyLjE2OC4yMDAuMTAwIDE5Mi4xNjguMjAwLjEgMjQK</config>
+    </configs>
+  </objects>
+  <objects/>
+</lab>

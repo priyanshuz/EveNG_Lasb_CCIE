@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<lab name="EXOS - with MSTP" version="1" scripttimeout="300" lock="0">
+  <topology>
+    <nodes>
+      <node id="1" name="CORE-01" type="qemu" template="extremexos" image="extremexos-30.7.1.1" console="telnet" cpu="1" cpulimit="0" ram="320" ethernet="8" uuid="0d517f0a-abab-4b3a-bb36-50984c092451" qemu_options="-machine type=pc-1.0,accel=kvm -cpu Nehalem -nographic -rtc base=utc" qemu_version="2.4.0" qemu_arch="x86_64" delay="0" icon="Switch L3.png" config="0" left="315" top="351">
+        <interface id="1" name="port1" type="ethernet" network_id="3"/>
+        <interface id="2" name="port2" type="ethernet" network_id="5"/>
+        <interface id="4" name="port4" type="ethernet" network_id="9"/>
+        <interface id="6" name="port6" type="ethernet" network_id="1"/>
+        <interface id="7" name="port7" type="ethernet" network_id="2"/>
+      </node>
+      <node id="2" name="CORE-02" type="qemu" template="extremexos" image="extremexos-30.7.1.1" console="telnet" cpu="1" cpulimit="0" ram="320" ethernet="8" uuid="6816d67c-96b9-4ef5-80bc-598eb920fb01" qemu_options="-machine type=pc-1.0,accel=kvm -cpu Nehalem -nographic -rtc base=utc" qemu_version="2.4.0" qemu_arch="x86_64" delay="0" icon="Switch L3.png" config="0" left="564" top="348">
+        <interface id="1" name="port1" type="ethernet" network_id="6"/>
+        <interface id="2" name="port2" type="ethernet" network_id="4"/>
+        <interface id="4" name="port4" type="ethernet" network_id="10"/>
+        <interface id="6" name="port6" type="ethernet" network_id="1"/>
+        <interface id="7" name="port7" type="ethernet" network_id="2"/>
+      </node>
+      <node id="3" name="ASW-01" type="qemu" template="extremexos" image="extremexos-22.7.1.2" console="telnet" cpu="1" cpulimit="0" ram="320" ethernet="4" uuid="8fa24e78-13c9-4b6d-8ff6-600d987ffcb2" qemu_options="-machine type=pc-1.0,accel=kvm -cpu Nehalem -nographic -rtc base=utc" qemu_version="2.4.0" qemu_arch="x86_64" delay="0" icon="Switch L3.png" config="0" left="270" top="507">
+        <interface id="1" name="port1" type="ethernet" network_id="3"/>
+        <interface id="2" name="port2" type="ethernet" network_id="4"/>
+        <interface id="3" name="port3" type="ethernet" network_id="7"/>
+      </node>
+      <node id="4" name="ASW-02" type="qemu" template="extremexos" image="extremexos-22.7.1.2" console="telnet" cpu="1" cpulimit="0" ram="320" ethernet="4" uuid="d552fc91-6172-4bad-b618-2a3cef429047" qemu_options="-machine type=pc-1.0,accel=kvm -cpu Nehalem -nographic -rtc base=utc" qemu_version="2.4.0" qemu_arch="x86_64" delay="0" icon="Switch L3.png" config="0" left="594" top="507">
+        <interface id="1" name="port1" type="ethernet" network_id="6"/>
+        <interface id="2" name="port2" type="ethernet" network_id="5"/>
+        <interface id="3" name="port3" type="ethernet" network_id="8"/>
+      </node>
+      <node id="5" name="VPC01" type="vpcs" template="vpcs" image="" ethernet="1" delay="0" icon="Desktop.png" config="0" left="207" top="639">
+        <interface id="0" name="eth0" type="ethernet" network_id="7"/>
+      </node>
+      <node id="6" name="VPC02" type="vpcs" template="vpcs" image="" ethernet="1" delay="0" icon="Desktop.png" config="0" left="648" top="642">
+        <interface id="0" name="eth0" type="ethernet" network_id="8"/>
+      </node>
+      <node id="7" name="RT-01" type="iol" template="iol" image="i86bi_LinuxL3-AdvEnterpriseK9-M2_157_3_May_2018.bin" ethernet="2" nvram="128" ram="256" serial="2" console="" delay="0" icon="Router.png" config="0" left="438" top="204">
+        <interface id="0" name="e0/0" type="ethernet" network_id="9"/>
+        <interface id="16" name="e0/1" type="ethernet" network_id="10"/>
+        <interface id="1" name="e1/0" type="ethernet" network_id="11"/>
+      </node>
+    </nodes>
+    <networks>
+      <network id="1" type="bridge" name="Net-CORE-01iface_6" left="651" top="232" visibility="0"/>
+      <network id="2" type="bridge" name="Net-CORE-01iface_7" left="651" top="232" visibility="0"/>
+      <network id="3" type="bridge" name="Net-ASW-013iface_1" left="588" top="394" visibility="0"/>
+      <network id="4" type="bridge" name="Net-CORE-02iface_2" left="882" top="235" visibility="0"/>
+      <network id="5" type="bridge" name="Net-CORE-01iface_2" left="633" top="238" visibility="0"/>
+      <network id="6" type="bridge" name="Net-CORE-02iface_1" left="882" top="235" visibility="0"/>
+      <network id="7" type="bridge" name="Net-VPC5iface_0" left="543" top="505" visibility="0"/>
+      <network id="8" type="bridge" name="Net-VPC6iface_0" left="951" top="511" visibility="0"/>
+      <network id="9" type="bridge" name="Net-R7iface_0" left="753" top="91" visibility="0"/>
+      <network id="10" type="bridge" name="Net-R7iface_16" left="753" top="91" visibility="0"/>
+      <network id="11" type="pnet0" name="Internet" left="435" top="60" visibility="1"/>
+    </networks>
+  </topology>
+</lab>

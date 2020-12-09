@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<lab name="mikrotik" version="1" scripttimeout="300" lock="0">
+  <topology>
+    <nodes>
+      <node id="1" name="Mikrotik" type="qemu" template="mikrotik" image="mikrotik-6.45.9" console="telnet" cpu="1" cpulimit="0" ram="256" ethernet="4" uuid="57f12750-0e0c-466d-b088-28ba941e65c2" qemu_options="-machine type=pc-1.0,accel=kvm -serial mon:stdio -nographic -no-user-config -nodefaults -display none -vga std -rtc base=utc" qemu_version="2.4.0" qemu_arch="x86_64" delay="0" icon="Router.png" config="0" left="444" top="150"/>
+    </nodes>
+  </topology>
+</lab>
